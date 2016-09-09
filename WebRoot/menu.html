@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class="easyui-accordion" data-options="fit:true">
+	<div title="车辆管理">
+    	<ul>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="addCars.html">分配车辆</a>
+            </li>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="findCar.html">查看车辆</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="updateCars.html">修改车辆</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="linkbutton.html ">删除车辆</a>
+            </li>
+        </ul>
+    
+    
+    </div>
+	<div title="订单管理">
+    	<ul>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">查看订单</a>
+            </li>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">修改订单</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">添加订单</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">删除订单</a>
+            </li>
+        </ul>
+    </div>
+    <div title="路线管理">
+    	<ul>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">新增线路</a>
+            </li>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">修改线路</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">查看线路</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">删除线路</a>
+            </li>
+        </ul>
+    </div>
+    <div title="配送点管理">
+    	<ul>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">新增配送点</a>
+            </li>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">查看配送点</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">删除配送点</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">修改配送点</a>
+            </li>
+        </ul>
+    </div>
+    <div title="用户管理">
+    	<ul>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="page_user.jsp">分页演示</a>
+            </li>
+        	<li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="query_user.jsp">查看用户</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">修改用户</a>
+            </li>
+            <li>
+            	<a class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" href="javascript:void(0)">冻结用户</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<script>
+$(function(){
+	$("ul a").click(function(){
+		//获取当前链接按钮的href值
+		var href=$(this).attr("href");
+		//获取布局中center面板
+		var panel=$("body").layout("panel","center");
+		//刷新center面板，加载新数据
+		panel.panel("refresh",href);
+		return false;
+	});
+	
+	
+	
+});
+
+
+
+
+
+</script>
+</body>
+</html>

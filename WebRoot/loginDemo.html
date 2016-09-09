@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<!-- 第一步：导入jQuery核心库，在压缩文件的根目录下 -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!--第二步：导入easyUI核心库，在压缩文件的根目录下-->
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<!--第三步：导入语言包，在locale文件下-->
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+<!--第四步：导入easyUi皮肤包，在themes/default文件夹下-->
+<link type="text/css" rel="stylesheet" href="css/easyui.css"/>
+<!--第五步：导入图标库，在themes文件下-->
+<link type="text/css" rel="stylesheet" href="css/icon.css"/>
+
+</head>
+
+<body>
+<div class="easyui-dialog" style="width:300px; height:200px; padding:10px;" title="用户登录">
+	<form id="login" method="post">
+    	<table align="center">
+        	<tr>
+            	<td>用户名：</td>
+                <td><input class="easyui-validatebox" name="userName" data-options="required:true" /></td>
+            </tr>
+            <tr>
+            	<td>密码：</td>
+                <td><input type="password" name="userPwd" class="easyui-validatebox" data-options="required:true"/></td>
+            </tr>
+            <tr>
+            	<td colspan="2" align="center">
+                	 <a href="javascript:void(0)" class="easyui-linkbutton">登录</a>
+                      <a href="javascript:void(0)" class="easyui-linkbutton reset">重置</a>
+                </td>
+                
+            </tr>
+        
+        </table>
+    
+    
+    
+    </form>
+
+
+
+</div>
+<script type="text/javascript">
+$("#login a").click(function(){
+	$("#login").form('submit',{
+		url:'login.action',
+		//表单提交时的验证信息
+		onSubmit:function(){
+			 return $("#login").form('validate');
+			 
+		},
+		//表单提交成功后执行的操作
+		success:function(data){
+			var dd=eval("("+data+")");
+			if(dd.msg!=null){
+				$.messager.alert('Warning',dd.msg);  
+			}else{
+				window.location='main.jsp';
+			}
+			  
+		}
+	});	
+	//提交表单
+	//$("#login").submit();
+});
+//重置
+$("#login .reset").click(function(){
+	$("#login").form("clear");	
+});
+
+
+</script>
+
+</body>
+</html>
